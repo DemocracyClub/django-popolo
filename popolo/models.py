@@ -127,14 +127,14 @@ class Organization(Dateframeable, Timestampable, models.Model):
 
     founding_date = models.CharField(_("founding date"), max_length=10, null=True, blank=True, validators=[
                     RegexValidator(
-                        regex='^[0-9]{4}(-[0-9]{2}){0,2}$',
+                        regex=r'^[0-9]{4}(-[0-9]{2}){0,2}$',
                         message='founding date must follow the given pattern: ^[0-9]{4}(-[0-9]{2}){0,2}$',
                         code='invalid_founding_date'
                     )
                 ], help_text=_("A date of founding"))
     dissolution_date = models.CharField(_("dissolution date"), max_length=10, null=True, blank=True, validators=[
                     RegexValidator(
-                        regex='^[0-9]{4}(-[0-9]{2}){0,2}$',
+                        regex=r'^[0-9]{4}(-[0-9]{2}){0,2}$',
                         message='dissolution date must follow the given pattern: ^[0-9]{4}(-[0-9]{2}){0,2}$',
                         code='invalid_dissolution_date'
                     )
